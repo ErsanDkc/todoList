@@ -23,8 +23,10 @@ function addTodo(e) {
 
         inputDOM.value = ""
     
+    }   else {
+        $(".error.toast").toast("hide")
     }
-    
+
     e.preventDefault()
 
 
@@ -36,6 +38,8 @@ function addTodoList(todo) {
     let span = document.createElement("span")
     span.classList.add("close")
     span.innerHTML = `x`
+
+    $(".success.toast").toast("show")
     
     checkLi(liDOM)
     
@@ -64,7 +68,7 @@ function deleteItem() {
         deleteItem.forEach(function(x) {
             x.addEventListener("click", function(){
                 x.parentElement.remove()
-            
+                
             })
             
             
